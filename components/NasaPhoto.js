@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Heading, Container, Text, Image } from "@chakra-ui/react";
+import { Heading, Container, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -25,10 +26,10 @@ const NasaPhoto = () => {
         <Heading as="h2">{photoData.title}</Heading>
         {photoData.media_type === "image" ? (
           <Image
-            boxSize="600px"
-            margin="auto"
             src={photoData.url}
             alt={photoData.title}
+            width="600"
+            height="600"
           />
         ) : (
           <iframe
@@ -41,6 +42,7 @@ const NasaPhoto = () => {
             className="photo"
           />
         )}
+        <br />
         <Text>{photoData.explanation}</Text>
       </Container>
     </>

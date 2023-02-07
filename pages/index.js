@@ -11,7 +11,7 @@ export default function Home() {
     let year = newDate.getFullYear();
 
     return `${
-      month < 10 ? `0${month}` : `${month}`
+      month < 10 ? `${month}` : `${month}`
     }${separator}${date}${separator}${year}`;
   };
 
