@@ -4,16 +4,10 @@ import Button from "../components/Button";
 import NasaPhoto from "../components/NasaPhoto";
 
 export default function Home() {
-  const getDate = (separator = "/") => {
-    let newDate = new Date();
-    let date = newDate.getDate();
-    let month = newDate.getMonth() + 1;
-    let year = newDate.getFullYear();
-
-    return `${
-      month < 10 ? `${month}` : `${month}`
-    }${separator}${date}${separator}${year}`;
-  };
+  const today = new Date();
+  const formatedDate = new Intl.DateTimeFormat("en-us", {
+    dateStyle: "full",
+  });
 
   return (
     <div>
@@ -23,11 +17,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxW="1080px" textAlign="center">
-        <Button />
         <Heading as="h1" size="4xl">
           NASA Photo of the Day
         </Heading>
-        <Text>{getDate()}</Text>
+        <Text>{formatedDate.format(today)}</Text>
         <NasaPhoto />
       </Container>
     </div>
