@@ -15,7 +15,6 @@ const NasaPhoto = () => {
       );
       const data = await response.json();
       setPhotoData(data);
-      console.log(data);
     }
   }, []);
 
@@ -28,8 +27,8 @@ const NasaPhoto = () => {
           <Image
             src={photoData.url}
             alt={photoData.title}
-            width="600"
-            height="600"
+            width="550"
+            height="550"
           />
         ) : (
           <iframe
