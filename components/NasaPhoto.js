@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Heading, Container, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Heading, Container, Text, Image } from "@chakra-ui/react";
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -21,14 +20,23 @@ const NasaPhoto = () => {
   if (!photoData) return <div />;
   return (
     <>
-      <Container maxW="full">
-        <Heading as="h2">{photoData.title}</Heading>
+      <Container
+        maxW="full"
+        alignItems="center"
+        display="flex"
+        flexDirection="column"
+      >
+        <Heading as="h2" letterSpacing="tight">
+          {photoData.title}
+        </Heading>
         {photoData.media_type === "image" ? (
           <Image
             src={photoData.url}
             alt={photoData.title}
-            width="550"
-            height="550"
+            boxSize="500px"
+            borderRadius="lg"
+            align="center"
+            shadow="md"
           />
         ) : (
           <iframe

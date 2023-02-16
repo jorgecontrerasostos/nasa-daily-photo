@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxW="1080px" textAlign="center" mt={8}>
-        <Heading as="h1" size="4xl">
+        <Heading as="h1" size="4xl" letterSpacing="tight">
           NASA Photo of the Day
         </Heading>
         <Text>{formatedDate.format(today)}</Text>
