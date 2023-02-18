@@ -18,7 +18,6 @@ export default function Home() {
       </Head>
       <Container maxW="1080px" textAlign="center">
         <ColorModeButton />
-
         <Heading as="h1" size="4xl" letterSpacing="tight">
           NASA Photo of the Day
         </Heading>
