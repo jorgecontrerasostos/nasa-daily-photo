@@ -8,12 +8,15 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { useColorMode } from "@chakra-ui/react";
+
 const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Flex alignItems="center" gap="2" mx={64} mt={6}>
       <ButtonGroup width="100%" justifyContent="center">
-        <Button>
-          <FaMoon />
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? <FaMoon /> : <FaSun />}
         </Button>
       </ButtonGroup>
     </Flex>
