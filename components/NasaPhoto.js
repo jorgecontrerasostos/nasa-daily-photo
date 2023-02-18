@@ -26,7 +26,7 @@ const NasaPhoto = () => {
         display="flex"
         flexDirection="column"
       >
-        <Heading as="h2" letterSpacing="tight">
+        <Heading as="h2" letterSpacing="tight" mt={4}>
           {photoData.title}
         </Heading>
         {photoData.media_type === "image" ? (
@@ -37,6 +37,7 @@ const NasaPhoto = () => {
             borderRadius="lg"
             align="center"
             shadow="md"
+            mt={4}
           />
         ) : (
           <iframe
